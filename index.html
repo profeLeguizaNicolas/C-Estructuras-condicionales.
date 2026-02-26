@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras condicionales</title>
+    <link rel="shortcut icon" href="Imagenes/icono.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    
+    <h1>Estructuras condicionales</h1>
+    <ol>
+    <li>
+    <h4>Introducción:</h4>
+
+    <p>
+        Las <code>estructuras condicionales</code> evalúan una condición, y de acuerdo con el resultado de esa evaluación eligen uno de los caminos. Estas entructurass se utilizan cuando se desea que el algoritmo tome una decisión <code>lógica</code>
+    </p>
+
+    <p>
+        Existen tres tipos de estructuras condicionales: <code>simples</code>, <code>dobles</code> y <code>múltiples</code>.
+    </p>
+    </li>
+    <li><h4>Estructuras condicionales simples</h4></li>
+
+    <p>
+        Las <code>estructuras condicionales simples</code> evalúan una única condición. Si el resultado de esa evaluación es <b>verdadero</b> se realizarán un conjunto de acciones, pero si el resultado es <b>falso</b> no se realizará nada.
+    </p>
+
+    <div class="figure">
+    <img src="Imagenes/imagen1.png" alt="Descripción de la imagen">
+    </div>
+    <div class="descripciones">
+        <div class="desc">Diagrama de flujo de una estructura condicional simple.</div>
+        <div class="desc">Sintaxis en <code>C</code>de una estructura condicional simple.</div>
+    </div>
+  
+    <br>
+
+    <p>
+        Observar que, en <code>C</code> la estructura condicional simple se realiza mediante la instrucción <code style="color:brown">if</code>, la cual significa <code style="color:brown">si</code> en inglés. Para comprender como se aplica esta estructura para resolver problemas, se muestra a continuación un ejemplo:
+    </p>
+
+    <p>
+        <b>Ejemplo</b>: Se desea realizar un algoritmo que indique si un número es positivo. El valor del número se debe ingresar por teclado, y el mensaje se debe imprimir en pantalla. Realizar el diagrama de flujo y programa <code>C</code> del algoritmo.
+    </p>
+
+    <p>
+        <b>Solución</b>: El algoritmo deberá, en primera instancia, declarar la variable que se va a utilizar <code><i>n</i></code>. Luego, deberá leer el dato de entrada, realizar las comparaciones lógicas necesarios, y escribir el resultado si así correspondiera. El diagrama de flujo del algoritmo es el siguiente:
+    </p>
+
+   
+    <div class="figure">
+    <img src="Imagenes/imagen5.png" alt="Descripción de la imagen">
+    </div>    
+    <p style="text-align: center;">
+        <i>Diagrama de flujo del algoritmo.</i>
+    </p>
+    <p>
+        Una vez realizado el diagrama de flujo del algoritmo, se deberá expresar en un lenguaje de programación. El lenguaje pedido por la consigna es <code>C</code>.
+    </p>
+
+
+    <pre><code class="language-cpp">
+#include &lt;stdio.h>   /*Añade la librería "std input-output" que contiene operaciones de entrada/salida tales como "scanf" y "printf"*/
+int main()            /*"main" es la función principal, donde está alojado el programa principal, cuya entrada es nula ("void") y su salida es un enetero "int".*/
+{
+    int n=0; /*Declara las variables entera "n" y les asigna el valor de "0"*/
+    scanf("%i",&n);                 /*Ingrese un número por teclado y lo lmacena en la variable "n".*/
+    if( n > 0)               /*Realiza la comparación lógica "n > 0"*/
+        {
+            printf("El numero es positivo.");             /*Imprime en pantalla el valor almacena la variable "area".*/
+        }
+    return 0;               /*Devuelve un "0" como resultado de la función principal "main". Esto indica que el programa se ejecuto correctamente*/
+}
+    </code></pre>
+    <p style="text-align: center;">
+        <i>Programa en <code>C</code> del algoritmo</i>.
+    </p>
+
+    <li><h4>Operadores relacionantes y Operadores lógicos.</h4>
+
+    <p>
+        En el ejemplo anterior, la condición de la estructura selectiva fue una <i>comparación lógica</i>. La comparación <code> n > 0</code> evalúa si <code>n</code> es mayor que <code>0</code>. Si <code>n</code> es mayor que <code>0</code>, el resultado es verdadero. Si <code>n</code> no es mayor que <code>0</code>, el resultado es falso.
+    </p>
+
+    <p>
+        El operador <code>></code> utilizado en la comparación es un <i>operador relacionante</i>, y no es el únio que existe. A continuación, se detalla todos los operadores relacionantes que  se pueden utilizar:
+    </p>
+
+    <table>
+       <thead>
+            <tr>
+                <th colspan="4">Operadores relacionantes</th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <th>Operador</th>
+                <th>Relación</th>
+                <th>Ejemplo</th>
+                <th>Resultado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&lt;</td>
+                <td>Menor</td>
+                <td>a &lt; b</td>
+                <td>Si <code>a</code> es menor que <code>b</code>, el resultado de la comparación es verdadero. Caso contrario, el resultado es <i>falso</i>.</td>
+            </tr>
+            <tr>
+                <td>></td>
+                <td>Mayor</td>
+                <td>a > b</td>
+                <td>Si <code>a</code> es mayor que <code>b</code>, el resultado de la comparación es <i>verdadero</i>. Caso contrario, el resultado es <i>falso</i>.</td>
+            </tr>
+            <tr>
+                <td>&lt;=</td>
+                <td>Menor o igual</td>
+                <td> a &lt;= b</td>
+                <td>Si <code>a</code> es menor o igual que <code>b</code>, el resultado de la comparación es <i>verdadero</i>. Caso contrario, el resultaddo es <i>falso</i>.</td>
+            </tr>
+            <tr>
+                <td>>=</td>
+                <td>Mayor o igual</td>
+                <td> a >= b</td>
+                <td>Si <code>a</code> es mayor o igual que <code>b</code>, el resultado de la comparación es verdadero. Caso contrario, el resultado es <i>falso</i></td>
+            </tr>
+            <tr>
+                <td>==</td>
+                <td>Igual</td>
+                <td>a == b</td>
+                <td>Si <code>a</code> es igual que <code>b</code>, el resultado de la comparación es <i>verdadero</i>. Caso contrario, el resultado es <i>falso</i>.</td>
+            </tr>
+            <tr>
+                <td>!=</td>
+                <td>Distinto</td>
+                <td>a != b</td>
+                <td>Si <code>a</code> es distinto que <code>b</code>, el resultado de la comparación es <i>verdadero</i>. Caso contrario, el resultado es <i>falso</i>.</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <p>
+        Cabe mencionar, que resultado verdadero en <code>C</code> equivale a un valor distinto de <code>0</code>, mientras que un resultado <span style="color:red">falso</span> equivale a un valor igual a <code>0</code>. También, en <code>C</code> se pueden representar a los estados <span style="color: blue">verdadero</span> y <span style="color:red">falso</span> con las palabras clave <code style="color:blue">true</code> y <code style="color:red">false</code> respectivamente.
+    </p>
+    <p>
+        Además de los operadores relacionantes, también existen los <i>operadores lógicos</i>. Estos operan con estados lógicos, y entregan como resultado otro estado lógico. A continuación, se detallan todos los operadores lógicos que se pueden utilizar:
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th colspan="4">Operadores lógicos</th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <td>Operador</td>
+                <td>Acción</td>
+                <td>Ejemplo</td>
+                <td>Resultado</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&&</td>
+                <td><code>AND</code> lógico</td>
+                <td>a && b</td>
+                <td>El resultado es <span style="color:blue">verdadero</span>
+                si <code>a</code> y <code>b</code> son <span style="color: blue;"> verdaderos.</span></td>
+            </tr>
+            <tr>
+                <td>||</td>
+                <td><code>OR</code> lógico</td>
+                <td>a || b</td>
+                <td>El resultado es <span style="color:blue">verdadero</span>
+                si <code>a</code> o <code>b</code> son <span style="color: blue;"> verdaderos.</span></td>
+            </tr>
+             <tr>
+                <td>!</td>
+                <td><code>NOT</code> lógico</td>
+                <td>!a</td>
+                <td>El resultado es la negación lógica de <code>a</code>.</td>
+            </tr>
+        </tbody>
+    </table>
+    </li>
+    <li><h4>Estructuras condicionales dobles</h4>
+
+    <p>
+        Las estructuras condicionales dobles, también evalúan una única condición. Si el resultado de esa evaluación es <span style="color:blue">verdadero</span> se realizarán un conjunto de acciones, y si el resultado es <span style="color:red">falso</span> se realizará otro conjunto de acciones.
+    </p>
+
+    <p>
+        A continuación, se muestra el diagrama de flujo y su sintaxis en <code>C</code> de una estructurta condicional doble:
+    </p>
+
+    <div class="figure">
+    <img src="Imagenes/imagen3.png" alt="Descripción de la imagen">
+    </div>
+    
+    <div class="descripciones">
+        <div class="desc">
+            Diagrama de flujo de una estructura condicional doble
+        </div>
+
+        <div class="desc">
+            Sintaxis en <code>C</code> de una estructura condicional doble
+        </div>
+    </div>
+
+    <p>
+        Observar que, en <code>C</code> la estructura condicional doble se realiza con las palabras <span style="color:blue"><i>if</i></span> y <span style="color:red"><i>else</i></span>, las cuales significan <span style="color:blue"><i>si</i></span> y <span style="color:red"><i>si no</i></span> en inglés. Para comprender como se aplica esta estructura para resolver problemas, se muestra a continuación un ejemplo:
+    </p>
+    <p>
+        <b>Ejemplo</b>: Se desea realizar un algoritmo que indique si un número es igual o distinto de cero. El valor del número se debe ingresar por teclado, y el mensaje se debe imprimir en pantalla. Realizar el diagrama de flujo y programa en <code>C</code> del algoritmo.
+    </p>
+    <p>
+        <b>Solución</b>: El algoritmo deberá, en primera instancia, declarar las variables que se an a utilizar <code style="color:blue">n</code>. Luego, deberá leer el dato de entrada, realizar las comparaciones lógicas necesarios, y escribir el resultado que corresponda. El diagrama de flujo del algoritmo es el siguiente:
+    </p>
+
+    <!--Aqui va la foto-->
+    <div class="figure">
+    <img src="Imagenes/imagen4.png" alt="Descripción de la imagen">
+    </div>
+
+    <p>
+        Una vez realizado el diagrama de flujo del algoritmo, se deberá expresar en un lenguaje de programación. El lenguaje pedido por la consigna es <code>C</code>.
+    </p>
+
+    <pre><code class="language-cpp">
+#include &lt;stdio.h>             /*Añade la librería "std input-output" que contiene operaciones de entrada/salida tales como "scanf" y "printf"*/
+
+int main()            /*"main" es la función principal, donde está alojado el programa principal, cuya entrada es nula ("void") y su salida es un enetero "int".*/
+{
+    int n=0; /*Declara las variables entera "n" y les asigna el valor de "0"*/
+    scanf("%i",&n);                 /*Ingrese un número por teclado y lo lmacena en la variable "n".*/
+    if( n == 0)               /*Realiza la comparación lógica "n == 0"*/
+        {
+            printf("El numero es igual a cero.");             /*Si la comparación es verdadera, imprime el mensaje.*/
+        }
+        else    /* Si la comparación es falsa, imprime el mensaje: "El numero es distinto a cero".*/
+        {
+            printf("El numero es distinto a cero");
+        }
+    return 0;               /*Devuelve un "0" como resultado de la función principal "main". Esto indica que el programa se ejecuto correctamente*/
+}
+    </code></pre>
+    <p style="text-align: center;">
+        <i>Programa en <code>C</code> del algoritmo.</i>
+    </p>
+    <p>
+        No se debe dejar de tener en cuenta que la sintaxis es determinante para que el programa pueda ser compilado. La condición debe ir entre paréntesis, y las acciones deben ir entre llaves.
+    </p>
+    </li>
+    </ol>
+    
+    <hr>
+    
+    <h4>Ejercicios:</h4>
+    <ol>
+        <li>
+        <p>
+            Diseñar un algoritmo que, a partir de la edad de una persona, determine si es o no mayor de edad. La edad de la persona se debe ingresar por teclado y el resultado se debe imprimir en pantalla. Dibujar el diagrama de flujo y escribir el programa en <code>C</code> del algoritmo.
+        </p>
+        <fieldset>
+            <legend>Video ejercicio 1:</legend>
+            <iframe width="630" height="380"  src="https://www.youtube.com/embed/246-JYyc5tE" title="condicionales ejercicio 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </fieldset>
+        </li>
+
+        <li>
+        <p>
+            Diseñar un algoritmo que realice la división de dos números decimales. Los números se deben ingresar por teclado y el resultado se debe imprimir en pantalla. En caso de que el divisor sea igual a cero, se deberá imprimir en pantalla el mensaje <b>Los datos ingresados no son válidos</b> (ya que en matemática no está definida la división por cero). Dibujar el diagrama de flujo y escribir el programa en <code>C</code> del algoritmo.
+        </p>
+        <fieldset>
+            <legend>Video ejercicio 2:</legend>
+            <iframe width="630" height="380" src="https://www.youtube.com/embed/4fsh4A5n1OY" title="Condicionales ejercicio 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </fieldset>
+        <br>
+        <p>
+            <b>Ayuda</b>: Para dividir dos números se puede utilizar el operador aritmético <code>/</code>. A continuación, se muestra una tabla con algunos de los operadores aritméticos que existen en <code>C</code>:
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="4">Operadores aritméticos</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <th>Operador</th>
+                    <th>Acción</th>
+                    <th>Ejemplo</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>+</td>
+                    <td>Suma</td>
+                    <td>x = 5 + 3</td>
+                    <td>x vale 8</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>Resta</td>
+                    <td>x = 5 - 3</td>
+                    <td>x vale 2</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>Multiplcación</td>
+                    <td>x = 5 * 3</td>
+                    <td>x vale 15</td>
+                </tr>
+                <tr>
+                    <td>/</td>
+                    <td>División</td>
+                    <td> x = 12 / 3</td>
+                    <td> x vale 4</td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>Resto</td>
+                    <td>x = 11 % 3</td>
+                    <td> x vale 2</td>
+                </tr>
+                <tr>
+                    <td>++</td>
+                    <td>Incremento</td>
+                    <td>x = 1; x++;</td>
+                    <td>x vale 2</td>
+                </tr>
+                <tr>
+                    <td>--</td>
+                    <td>Decremento</td>
+                    <td>x = 1; x--;</td>
+                    <td>x vale 0</td>
+                </tr>
+            </tbody>
+        </table>
+        </li>
+        <li>
+        <p>
+            Diseñar un algoritmo que, a partir de la calificación de un alumno, determine si está <code>Aprobado</code>, <code>Desaprobado</code> o <code>Aplazado</code>. Tener en cuenta que las calificaciones están comprendidas entre 0 y 10, según la siguiente tabla:
+        </p>
+        <fieldset>
+            <legend>Video ejercicio 3:</legend>
+            <iframe width="630" height="380" src="https://www.youtube.com/embed/I-hApCnuewk" title="Condicionales ejercicio 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </fieldset>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nota del alumno</th>
+                    <th>Condición del alumno</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0 a 3</td>
+                    <td>Aplazado</td>
+                </tr>
+                <tr>
+                    <td>4 a 6</td>
+                    <td>Desaprobado</td>
+                </tr>
+                <tr>
+                    <td>7 a 10</td>
+                    <td>Aprobado</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>La calificación del alumno se debe ingresar por teclado y el resultado se debe imprimir en pantalla. Dibujar diagrama de flujo y escribir el programa en <code>C</code> del algoritmo.</p>
+        <p><b>Ayuda</b>: Si es necesario evaluar más de una condición, se pueden recurrir a las <i>estructutas anidadas</i>. Las estructuras anidadas, son estructuras que dentro tienen otra estructura. A continuacion, se muestra el diagrama de flujo y la sintaxis de una estructura anidada con dos estructuras condicionales dobles, un dentro de la otra:</p>
+
+        <!-- aqui imagen-->
+         <div class="figure">
+            <img src="Imagenes/imagen6.png" alt="Descripción de la imagen">
+        </div>
+
+         <div class="descripciones">
+        <div class="desc">
+            Diagrama de flujo de dos estructuras condicionales dobles anidadas
+        </div>
+
+        <div class="desc">
+            Sintaxis en <code>C</code> de una estructura condicional doble
+        </div>
+    </div>
+        </li>
+        <li>
+            <p>
+                Diseñar un algoritmo que, a partir de una letra, determine si es o no una vocal. La letra se debe ingresar por teclado y el resultadose debe imprimir en pantalla. Dibujar el diagrama de flujo y escribir el programa en <code>C</code> del algoritmo.
+            </p>
+
+            <fieldset>
+                <legend>Video ejercicio 4:</legend>
+                <iframe width="630" height="380" src="https://www.youtube.com/embed/AkofTCW2eDI" title="Condicionales ejercicio 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </fieldset>
+            <p>
+                <b>Ayuda 1</b>: Recordar que las letras son caracteres, y los mismos se almacenan en variables <code>char</code>. Las variables <code>char</code> de un único carácter se declaran de la siguiente forma:
+            </p>
+<pre><code class="language-cpp">
+char letra; /*Declara la variable de tipo caracter "letra".*/
+</code></pre>
+
+        <p>
+            <b>Ayuda 2</b>: Para comparar una variable con un caracter en una condición, mediante algún operador, el caracter debe estar entre comillas simples. A continuación, se muestra un ejemplo de cómo debe ser la sintaxis dentro de la condición de una estructura condicional para comprar caracteres:
+        </p>
+<pre><code class="language-cpp">
+if(letra == 'a') /*Realiza una comparación lógica entre el carácter.*/
+    {            /*Almacenado en la variable "letra" con el carácter 'a'.*/
+        printf("La letra ingresada es la a");
+    }
+</code></pre>
+        <p>
+            <b>Ayuda 3</b>: A veces, se pueden simplicar los algoritmos mediante la implementación de operadores lógicos. En el siguiente ejemplo se ilustra la ventaja de utilizar operadores lógicos en las condiciones de la estructuras condicionales.
+        </p>
+        <p>
+            El siguiente programa imprime en pantalla un mensaje cuando un número ingresado por teclado es <code>0</code> o <code>1</code>:
+        </p>
+<pre><code class="language-cpp">
+if(numero == 0) 
+    {            
+        printf("El numero ingresado es 0 o 1.");
+    }
+if(numero == 1) 
+    {            
+        printf("El numero ingresado es 0 o 1.");
+    }
+</code></pre>
+        <p>
+            El programa evalúa dos condiciones, si el número es 0, y si el número es 1. En caso de que se cumpla cualquiera de las dos condiciones, se imprimirá en pantalla el mismo mensaje. Pero utilizando el operador lógico <code>||</code> <b>(OR lógico)</b>, se puede resolver el mismo problema evaluando una única condicion, de la siguiente manera:
+        </p>
+<pre><code class="language-cpp">
+if(numero == 0 || numero == 1) 
+    {            
+        printf("El numero ingresado es 0 o 1.");
+    }
+</code></pre>
+        <p>
+            El resultado de evaluar la condición de la estructura condicional será verdadero cualquiera de las condiciones <code>numero == 0</code> o <code>numero == 1</code>. De esta forma, se obtiene el mismo resultado, pero simplificando sustancialmente la elaboración del programa.
+        </p>
+        </li>
+        <li>
+            <p>
+                Diseñar un algoritmo que ordene de menor a mayor tres números. Los números se deben ingresar por teclado y el resultado se debe imprimir en pantalla. Dibujar el diagrama de flujo y escribir el programa en <code>C</code> del algoritmo.
+            </p>
+            <fieldset>
+                <legend>Video ejercicio 5:</legend>
+                <iframe width="630" height="380" src="https://www.youtube.com/embed/KMkSMjmfNrE" title="Condicionales Ejercicio 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </fieldset>
+        </li>
+    </ol>
+
+<script type="module" src="main.js"></script>
+
+</body>
+</html>
